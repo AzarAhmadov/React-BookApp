@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  background: #fdf5f3;
+  overflow-x: hidden;
+}
+
+main .main-container {
+  background: url(../public/images/pexels-rafael-cosquiere-2041540.jpg);
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+main .main-container::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: rgba(0, 0, 0, 0.378);
+  position: absolute;
+  top: 0;
+}
+main .main-container .main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+main .main-container .main-content h1 {
+  color: #fff;
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+main .main-container .main-content input {
+  background: #d35400;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+}
+main .main-container .main-content input::-moz-placeholder {
+  color: #fff;
+}
+main .main-container .main-content input:-ms-input-placeholder {
+  color: #fff;
+}
+main .main-container .main-content input::placeholder {
+  color: #fff;
+}
+main .card .card-content {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 270px;
+  margin: 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+main .card .card-content img {
+  width: 100%;
+  padding: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 30px;
+}
+main .card .card-content .card-bottom {
+  text-align: center;
+  width: 100%;
+  background: #fbe9e5;
+}
+main .card .card-content .card-bottom .book-name {
+  font-weight: bold;
+  font-size: 17px;
+  padding: 20px 10px;
+}
+main .card .card-content .card-bottom .price {
+  background: #e89681;
+  width: 100%;
+  padding: 12px 0;
+  color: #fff;
+  font-size: 17px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+main .main-card-bottom {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.error {
+  position: absolute;
+  bottom: -30px;
+  font-style: italic;
+  color: #af6464;
+  font-weight: bold;
+  visibility: hidden;
+  opacity: 0;
+  margin-right: 100px;
+  transition: 400ms all;
+  font-size: 24px;
+}
+
+.error.active {
+  margin: 0px;
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+.remove {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: #ecf0f1;
+  display: flex;
+  align-items: center;
+  transition: 500ms all;
+  justify-content: center;
+  padding: 0 20px;
+}
+.modal .modal-container {
+  padding: 50px 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.202);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.modal .modal-container .close-btn {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  cursor: pointer;
+  color: rgb(215, 34, 34);
+  font-size: 20px;
+}
+.modal .modal-container .modal-top {
+  display: flex;
+}
+.modal .modal-container .modal-top img {
+  height: 350px;
+  margin-right: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.modal .modal-container .modal-top .modal-title {
+  margin-bottom: 10px;
+  font-size: 23px;
+}
+.modal .modal-container .modal-top .autor {
+  font-size: 25px;
+  color: rgb(156, 48, 156);
+}
+.modal .modal-container .modal-top .content {
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.363);
+  border-radius: 10px;
+  max-height: 239px;
+  padding: 10px 15px;
+  overflow: auto;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+}
+.modal .modal-container .modal-top .content.active {
+  display: none;
+}
+.modal .modal-container .modal-top .content p {
+  font-size: 17px;
+  color: #000;
+}
+
+@media only screen and (max-width: 678px) {
+  .modal .modal-container {
+    padding: 20px 10px;
+  }
+  .modal .modal-container .modal-top {
+    flex-direction: column;
+  }
+  .modal .modal-container .modal-top img {
+    height: 250px;
+  }
+  .modal .modal-container .modal-top .modal-title {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .modal .modal-container .modal-top .autor {
+    text-align: center;
+    font-size: 18px;
+  }
+  .modal .modal-container .modal-top .content {
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
+  main .main-container {
+    height: 250px;
+  }
+  main .main-container .main-content h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+  main .main-container .main-content input {
+    font-size: 18px;
+    padding: 15px 25px;
+  }
+  main .main-card-bottom {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+  .card-content {
+    margin: 10px 0 !important;
+    width: 180px !important;
+  }
+  main .card .card-content .card-bottom .book-name {
+    font-size: 15px;
+  }
+  main .card .card-content .card-bottom .price {
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+}/*# sourceMappingURL=App.css.map */
