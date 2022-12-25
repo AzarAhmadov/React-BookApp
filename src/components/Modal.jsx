@@ -6,7 +6,7 @@ const Modal = ({ show, onClose, data }) => {
     const content = useRef()
 
     const remove = () => {
-        modal.current.classList.add('remove')
+        modal.current.classList.toggle('remove')
     }
 
     let thumbnail = data.volumeInfo.imageLinks && data.volumeInfo.imageLinks.smallThumbnail;
